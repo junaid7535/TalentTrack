@@ -1,27 +1,79 @@
-## Talent Tracker
 
-> This web app allows you to keep track of your job applications by creating them and storing in a database. You can also edit or delete existing applications, and view statistics on them: number of declined, pending, scheduled for interview jobs and number of applications created each month.
-> To start using the application, you need to create a personal profile/account.
+# Application Tracking System
+
+This project is a fully functional Applicant Tracking System (ATS) that manages job postings, receives applications, and creates a hiring workflow for these applications. It is built using the MERN stack: MongoDB, Express, React, and Node.js.
 
 
-### To view the app in the browser, copy and paste the following line to your browser URL address bar:
+## Installation
 
-> NOTE: The app is deployed on a free tier of Render.com, so most of the time it's in a sleep mode. It may take up to 60-90 seconds for Render.com to wake it up. Thank you for your patience!
-
+Clone the repository:
 ```
-https://mern-job-tracker-mt0w.onrender.com/
+git clone https://github.com/nikhilmalakar/application-tracking-system.git
+cd application-tracking-system
+```
+Install server dependencies:
+```
+cd server
+npm install
 ```
 
-### Functionalities:
+Install client dependencies:
+```
+cd client
+npm install
+```
 
-- protected routes for unauthorized users;
-- registering (creating account) / login / logout options;
-- editing profile data;
-- adding / editing job information (including job title, company name, job type, status, salary range, recruiter's name and email, interview date and time, etc);
-- rendering all the job cards created by the user;
-- pagination;
-- search bar (allows the user to filter the existing jobs by type, status, job title and also sort them alphabetically or by creation time);
-- displaying statistics as a chart for a certain period of time (number of declined, pending, scheduled for interview jobs; number of applications created each month);
-- deleting jobs from the database;
-- responsive design (mobile adaptation)
-# TalentTrack
+Create a .env file in the server directory and add the following:
+```
+MONGODB_URL=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+```
+
+Start the development server:
+```
+cd server
+npm run dev
+```
+
+Start the client:
+```
+cd client
+npm start
+```
+## Usage/Examples
+- Navigate to http://localhost:3000 in your web browser.
+- Create a user account for each role (Candidate, Coordinator, Recruiter, Employer).
+- Use the application according to the role functionalities outlined in the SRS summary.
+## SRS Summary
+
+#### Problem Statement
+The task is to design an Applicant Tracking System (ATS) that manages job postings, receives applications, and creates a hiring workflow.
+
+#### Users
+- Candidate: A job seeker who applies for jobs.
+- Coordinator: Manages job postings and recruitment workflows.
+- Recruiters: Screens candidates' resumes.
+- Employers: Creates job postings.
+
+#### Job Posting Flow
+- Employer creates a job post, including a job description and an R1 check form.
+- Coordinator approves the job post, assigns recruiters, and adds an R2 check form.
+- Coordinator posts the job, making it live for candidates to apply.
+
+#### Application Flow
+- Candidate creates an account, views job postings, and applies by uploading a resume and completing the R1 check form.
+- Recruiter reviews applications, completes the R2 check form, and shortlists candidates for the final stage.
+- Shortlisted applications appear in both employers' and coordinators' dashboards.
+
+#### Additional Requirements
+- User account management with role-based access.
+- Basic security practices.
+
+## Tech Stack
+
+**Client:** React, Redux, TailwindCSS
+
+**Server:** Node, Express, Mongoose
+
+**Database:** MongoDB
+
