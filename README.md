@@ -1,5 +1,5 @@
 
-# Application Tracking System
+# Application Tracking System - TrackMyJobs
 
 This project is a fully functional Applicant Tracking System (ATS) that manages job postings, receives applications, and creates a hiring workflow for these applications. It is built using the MERN stack: MongoDB, Express, React, and Node.js.
 
